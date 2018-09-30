@@ -1,4 +1,33 @@
-﻿<iframe src='https://webchat.botframework.com/embed/Milly?s=Yhav4G-wYTs.cwA.gbs.GpvxcEvwvWrF4caQEYTsDSxQOOwH4tymoaEKgMgWr_Q'
-        style="height:100%; width:100%;"></iframe>
+﻿<div id="bot" />
+<script src="https://cdn.botframework.com/botframework-webchat/latest/botchat.js"></script>
+<script>
 
+    var user = {
+        id: 'user-id',
+        name: 'user name'
+    };
+
+    var botConnection = new BotChat.DirectLine({
+        token: 'H40mU8ErchY.cwA._u4.keVilSXoUqcsg3OlDCT-4gUDZCCHDDgS2zsasx1jyEU',
+        user: user
+    });
+
+    BotChat.App({
+        user: user,
+        botConnection: botConnection,
+        bot: { id: 'bot-id', name: 'Milly' },
+        resize: 'detect'
+    }, document.getElementById("bot"));
+
+    botConnection
+        .postActivity({
+            from: user,
+            name: 'requestWelcomeDialog',
+            type: 'event',
+            value: ''
+        })
+        .subscribe(function (id) {
+            console.log('"trigger requestWelcomeDialog" sent');
+        });
+</script>
 
