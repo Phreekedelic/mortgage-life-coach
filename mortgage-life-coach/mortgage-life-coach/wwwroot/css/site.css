@@ -2,8 +2,6 @@
 for details on configuring this project to bundle and minify static web assets. */
 body {
     height: 100%;
-    padding-top: 50px;
-    padding-bottom: 20px;
 }
 
 html {
@@ -14,8 +12,7 @@ html {
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
     height: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0;
 }
 
 /* Carousel */
@@ -40,4 +37,28 @@ html {
     .carousel-caption {
         display: none;
     }
+}
+
+.notification {
+    position: absolute;
+    bottom: 140px;
+    right: 40px;
+}
+
+
+.number {
+    background-color: crimson;
+    color: white;
+    z-index: 2;
+    position: relative;
+    margin-left: -10px;
+    top: -13px;
+    font-weight: bold;
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    display: block;
+    text-align: center;
+    line-height: 16px;
+
 }
